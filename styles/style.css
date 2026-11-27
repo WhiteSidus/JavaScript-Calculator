@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    color: #e8eef8;
+    background: radial-gradient(ellipse at top, #263653 0%, #111827 55%, #0b1020 100%);
+    font-family: Inter, "Segoe UI", sans-serif;
+}
+
+header,
+footer {
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: #f8fafc;
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    letter-spacing: 0.04em;
+}
+
+#calculator {
+    width: min(100%, 340px);
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    background: rgba(22, 32, 51, 0.88);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+#display {
+    width: 100%;
+    height: 4.5rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.9rem;
+    outline: none;
+    background: #0c1424;
+    color: #f8fafc;
+    font: inherit;
+    font-size: 2rem;
+    text-align: right;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+}
+
+#keys button {
+    min-height: 3.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.9rem;
+    background: #26344c;
+    color: #e8eef8;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1.15rem;
+    transition: background-color 140ms ease, transform 140ms ease;
+}
+
+#keys button:hover {
+    background: #354765;
+}
+
+#keys button:active {
+    transform: scale(0.96);
+}
+
+#keys button:focus-visible {
+    outline: 2px solid #67e8f9;
+    outline-offset: 2px;
+}
+
+#keys button:nth-child(4n + 1) {
+    background: #33425e;
+}
+
+#keys button:nth-child(4n + 1):hover {
+    background: #435777;
+}
+
+#keys button:nth-last-child(-n + 3) {
+    background: #087e8b;
+}
+
+#keys button:nth-last-child(-n + 3):hover {
+    background: #0b9ba8;
+}
+
+footer h6 {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #keys button {
+        transition: none;
+    }
+}
